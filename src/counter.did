@@ -1,0 +1,6 @@
+service : {
+  get : () -> (int) query;
+  set : (int) -> ();
+  inc : () -> ();
+  dec : () -> ();
+}

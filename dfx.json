@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "counter": {
+      "build": "make",
+      "candid": "src/counter.did",
+      "type": "custom",
+      "wasm": "build/counter.wasm"
+    }
+  },
+  "dfx": "0.6.12",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8080",
+      "type": "ephemeral"
+    }
+  }
+}

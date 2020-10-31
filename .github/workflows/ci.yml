@@ -1,0 +1,39 @@
+name: "build"
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Clang + LLVM
+        run: sudo apt-get install clang-10 llvm-10
+      - name: Install WASI Libc
+        run: |
+          pushd /tmp
+          git clone https://github.com/WebAssembly/wasi-libc
+          sudo mv wasi-libc /opt
+          pushd /opt/wasi-libc
+          make WASM_CC=clang-10 WASM_AR=llvm-ar-10 WASM_NM=llvm-nm-10
+          popd
+          popd
+      - name: Install libtommath-wasm
+        run: |
+          pushd /tmp
+          wget https://github.com/enzoh/libtommath-wasm/releases/download/v1.2.0/libtommath-wasm-v1.2.0.tar.gz
+          tar -f libtommath-wasm-v1.2.0.tar.gz -x
+          sudo mv libtommath-wasm-v1.2.0 /opt
+          popd
+      - name: Install DFINITY SDK
+        run: |
+          pushd /tmp
+          wget -O install-dfx.sh https://sdk.dfinity.org/install.sh
+          yes Y | DFX_VERSION=0.6.12 bash install-dfx.sh
+          echo "::add-path::/home/runner/bin"
+          popd
+      - name: "Demo"
+        run: ./demo.sh
