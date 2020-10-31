@@ -9,7 +9,7 @@
 - [libtommath-wasm](https://github.com/enzoh/libtommath-wasm/releases)
 - [DFINITY SDK](https://sdk.dfinity.org)
 
-See the [build script](https://github.com/enzoh/counter/blob/master/.github/workflows/ci.yml) for details.
+See the [workflow](https://github.com/enzoh/counter/blob/master/.github/workflows/ci.yml) for details.
 
 ## Deployment
 
@@ -53,3 +53,7 @@ Decrement the value of the counter.
 ```
 dfx canister call counter dec
 ```
+
+## Contribute
+
+Feel free to join in. All are welcome. Open an [issue](https://github.com/enzoh/counter/issues)!
