@@ -1,4 +1,4 @@
-# Count 256-Bit Integers on the Internet Computer in C
+#  Count Arbitrary-Precision Integers on the Internet Computer in C 
 
 [![Build Status](https://github.com/enzoh/counter/workflows/build/badge.svg)](https://github.com/enzoh/counter/actions?query=workflow%3Abuild)
 
@@ -9,7 +9,7 @@
 - [libtommath-wasm](https://github.com/enzoh/libtommath-wasm/releases)
 - [DFINITY SDK](https://sdk.dfinity.org)
 
-See the [workflow](https://github.com/enzoh/counter/blob/master/.github/workflows/ci.yml) for details.
+See the [workflow](https://github.com/enzoh/counter/blob/master/.github/workflows/ci.yml) for installation details.
 
 ## Deployment
 
