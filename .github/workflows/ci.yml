@@ -33,7 +33,7 @@ jobs:
           pushd /tmp
           wget -O install-dfx.sh https://sdk.dfinity.org/install.sh
           yes Y | DFX_VERSION=0.6.12 bash install-dfx.sh
-          echo "::add-path::/home/runner/bin"
+          echo "/home/runner/bin" >> $GITHUB_PATH
           popd
       - name: "Demo"
         run: ./demo.sh
